@@ -1,0 +1,12 @@
+# SubscriptionNetworkBody
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**slug** | **string** | Please see the description for &#x60;slug&#x60; on **[GET] /business/{network}** | 
+**include_raw_data** | **bool** | This boolean option controls whether we should include the raw data in the payload that we deliver to your webhook or not. The raw data may include additional information that is not parsed by default by the API in the standard format that applies to all networks. Examples of raw data can be reviews rating breakdown, or number of followers, etc. Including raw data may drive the size of the data to become considerably large. Some servers may reject POST requests with large payloads over 2MB.    The value of this option can be updated at a later time. | [optional] [default to false]
+**auto_renew** | **bool** | When a subscription to a review page is created, it is set to expire after 30 days from the moment it was first requested. If you wish to continuously receive updates and never miss a review, you can set the subscription to automatically renew when it expires. This results in a new charge for the review page. In case of insufficient funds, the subscription is canceled and it does not restart even if you reload your balance. If we fail to renew the subscription, you will receive an in-app notification in addition to an email notification if not unsubscribed from that email list. Canceled subscriptions have to be restarted the same way they were first created.    A subscription is by default set *NOT* to auto-renew because the user&#x27;s consent is required. However, once the subscription is set to auto-renew, you have to explicitly revoke it by either updating the subscription or canceling it. All subscriptions will be renewed when they are 24 hours to expire.      The value of this option can be updated at a later time. | [optional] [default to false]
+**internal_id** | **string** | This is your application&#x27;s internal ID. It can help you identify the review page, particularly when you activate listeners and we send you a change notification.    The value of this option can be updated at a later time. | [optional] 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+
